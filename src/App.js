@@ -1,25 +1,97 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './component/navbar';
+import Form from './component/form';
+import DataTable from './component/dataTable';
+import Footer from './component/footer';
+
 
 class App extends Component {
+
+  state = {
+    items: [
+      { id: 1, name: "Chicken chese", type: "burger", restrurant: "chillox", location: "banani", price: "240", rating: 2 },
+      { id: 2, name: "Chicken chese", type: "burger", restrurant: "chillox", location: "banani", price: "240", rating: 2 },
+      { id: 3, name: "Chicken chese", type: "burger", restrurant: "chillox", location: "banani", price: "240", rating: 1 }
+
+    ],
+
+    item: {
+      id: null, name: "", type: "", restrurant: "", location: "", price: "", rating: ""
+    }
+
+
+  };
+  inputName = e => {
+    var item = { ...this.state.item };
+    item.name = e.target.value;
+    this.setState({ item })
+
+  }
+
+  inputType = e => {
+    var item = { ...this.state.item };
+    item.type = e.target.value;
+    this.setState({ item })
+
+  }
+
+  inputRestrurant = e => {
+    var item = { ...this.state.item };
+    item.restrurant = e.target.value;
+    this.setState({ item })
+
+  }
+
+  inputLocation = e => {
+    var item = { ...this.state.item };
+    item.location = e.target.value;
+    this.setState({ item })
+
+  }
+  inputPrice = e => {
+    var item = { ...this.state.item };
+    item.price = e.target.value;
+    this.setState({ item })
+
+  }
+  inputRate = e => {
+    var item = { ...this.state.item };
+    item.rating = e.target.value;
+    this.setState({ item })
+
+  }
+  addItem = () => {
+    var items = [...this.state.items]
+    items.push(this.state.item);
+    this.setState({ items });
+
+
+
+
+
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+
+        <Navbar />
+        <Form
+          item={this.props.item}
+          inputName={this.inputName}
+          inputType={this.inputType}
+          inputRestrurant={this.inputRestrurant}
+          inputLocation={this.inputLocation}
+          inputPrice={this.inputPrice}
+          inputRate={this.inputRate}
+          addItem={this.addItem}
+        />
+
+        <DataTable items={this.state.items}
+        // changeRating={this.changeRating}
+        />
+        <Footer />
       </div>
     );
   }

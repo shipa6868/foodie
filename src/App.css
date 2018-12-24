@@ -17,9 +17,64 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+body {
+  background-image: url(https://www.elimspaproducts.com/wp-content/uploads/2018/05/diet-healthy-heart-food-antioxidants-vegetables-fruits-nuts-heart-shaped-bowl-white-wooden-background-diet-113110536.jpg);
+}
+.input-field.col label {
+  left: 1.75rem;
+  color: white;
+  font-size: 16px;
+}
+.row .col.pull-l4 {
+  right: 33.3333333333%;
+  background-color: #560707cf;
+}
+
+
 
 .App-link {
-  color: #61dafb;
+  color:black;
+}
+.chart {
+  background-color: #560707cf;
+}
+
+.row .col.l6 {
+  width: 50%;
+  margin-left: 230px;
+  left: auto;
+  right: auto;
+  margin-bottom: 20px;
+}
+
+td, th {
+  padding: 15px 5px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 26px;
+  color: white;
+}
+
+
+nav .nav-wrapper {
+  position: relative;
+  height: 100%;
+  background-color: #4d0310;
+}
+.page-footer {
+  padding-top: 20px;
+  color: #fff;
+  background-color: #4a0e10fa;
+}
+h5 {
+  font-size: 1.30rem;
+  line-height: 110%;
+  margin: 0.093333rem 0 0.656rem 0;
+}
+
+label{
+  color: white;
 }
 
 @keyframes App-logo-spin {
@@ -30,3 +85,4 @@
     transform: rotate(360deg);
   }
 }
+
